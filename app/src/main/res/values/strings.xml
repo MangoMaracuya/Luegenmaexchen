@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Luegenmaexchen</string>
+    <string name="app_name">Mäxchen</string>
+    <string name="roll_dice">Roll Dice</string>
+    <string name="_00">00</string>
+    <string name="show_hide">Show/Hide</string>
+    <string name="higher">Higher</string>
+    <string name="high">High</string>
 </resources>
