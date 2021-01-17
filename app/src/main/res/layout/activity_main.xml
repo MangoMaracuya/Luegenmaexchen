@@ -28,22 +28,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/value_textview"
-        android:layout_width="388dp"
-        android:layout_height="468dp"
-        android:layout_marginBottom="85dp"
-        android:gravity="center_horizontal"
-        android:text=""
-        android:textAlignment="center"
-
-        android:textSize="250sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_show_hide"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/button_higher"
         android:layout_width="72dp"
@@ -55,5 +39,33 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_roll_dice"
         app:layout_constraintTop_toTopOf="@+id/button_roll_dice" />
+
+    <ImageView
+        android:id="@+id/left_die_imageview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_show_hide"
+        app:layout_constraintEnd_toStartOf="@+id/right_die_imageview"
+        app:layout_constraintHorizontal_weight=".45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/two" />
+
+    <ImageView
+        android:id="@+id/right_die_imageview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/left_die_imageview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight=".45"
+        app:layout_constraintStart_toEndOf="@+id/left_die_imageview"
+        app:layout_constraintTop_toTopOf="@+id/left_die_imageview"
+        app:srcCompat="@drawable/one"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
