@@ -24,6 +24,6 @@ class TestDice {
         val my_dice = Dice()
         my_dice.die1 = 1;
         my_dice.die2 = 2;
-        assertEquals(my_dice.calculate_value(), 21)
+        assertEquals(my_dice.calculate_value(), Pair(2, 1))
     }
 }
