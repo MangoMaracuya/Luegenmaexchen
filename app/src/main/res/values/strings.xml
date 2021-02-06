@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Mäxchen</string>
     <string name="roll_dice">Roll Dice</string>
-    <string name="_00">00</string>
     <string name="show_hide">Show/Hide</string>
-    <string name="higher">Higher</string>
     <string name="high">High</string>
+    <string name="shows_the_right_die">shows the right die</string>
+    <string name="shows_the_left_die">shows the left die</string>
 </resources>

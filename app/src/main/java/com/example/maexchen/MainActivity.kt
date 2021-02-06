@@ -6,22 +6,19 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import java.util.*
-
-enum class DieImage() {
-    ONE,
-    TWO,
-    THREE,
-    FOUR,
-    FIVE,
-    SIX;
-
-    fun to_path(): String {
-        return this.name.toLowerCase(Locale.ROOT) + ".png"
-    }
-}
+import com.bumptech.glide.Glide
 
 class MainActivity : AppCompatActivity() {
+
+    // Initialize variables:
+    lateinit var roll_dice_button:Button
+    lateinit var show_hide_button:Button
+    lateinit var higher_button:Button
+
+    lateinit var left_die_view:ImageView
+    lateinit var right_die_view:ImageView
+
+    // Define variables:
     var dice: Dice = Dice()
     var current_value: Pair<Int, Int> = Pair(0, 0)
 
@@ -29,21 +26,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val roll_dice_button = findViewById<Button>(R.id.button_roll_dice)
-        val show_hide_button = findViewById<Button>(R.id.button_show_hide)
-        val higher_button = findViewById<Button>(R.id.button_higher)
+        roll_dice_button = findViewById(R.id.button_roll_dice)
+        show_hide_button = findViewById(R.id.button_show_hide)
+        higher_button = findViewById(R.id.button_higher)
 
-        val left_die_view = findViewById<ImageView>(R.id.left_die_imageview)
-        val right_die_view = findViewById<ImageView>(R.id.right_die_imageview)
+        left_die_view = findViewById(R.id.left_die_imageview)
+        right_die_view = findViewById(R.id.right_die_imageview)
+
+        init_onclicklisteners()
+        
+        /* only for testing purposes
+        Glide.with(this)
+                .load(R.drawable.banana)
+                .into(left_die_view)*/
+    }
+
+    fun init_onclicklisteners() {
 
         roll_dice_button.setOnClickListener {
             dice.roll_dice()
             current_value = dice.calculate_value()
             if (current_value == Pair(2, 1)) {
-                
+
                 this.play_maexchen_sound()
             }
             set_image_views(current_value)
+            left_die_view.visibility = View.VISIBLE
+            right_die_view.visibility = View.VISIBLE
             higher_button.isEnabled = true
         }
 
@@ -51,11 +60,9 @@ class MainActivity : AppCompatActivity() {
             if (left_die_view.visibility != View.INVISIBLE && right_die_view.visibility != View.INVISIBLE) {
                 left_die_view.visibility = View.INVISIBLE
                 right_die_view.visibility = View.INVISIBLE
-                roll_dice_button.isEnabled = false
             } else {
                 left_die_view.visibility = View.VISIBLE
                 right_die_view.visibility = View.VISIBLE
-                roll_dice_button.isEnabled = true
             }
         }
 

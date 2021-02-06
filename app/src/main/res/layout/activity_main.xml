@@ -53,7 +53,8 @@
         app:layout_constraintHorizontal_weight=".45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/two" />
+        app:srcCompat="@drawable/two"
+        android:contentDescription="@string/shows_the_right_die" />
 
     <ImageView
         android:id="@+id/right_die_imageview"
@@ -66,6 +67,7 @@
         app:layout_constraintHorizontal_weight=".45"
         app:layout_constraintStart_toEndOf="@+id/left_die_imageview"
         app:layout_constraintTop_toTopOf="@+id/left_die_imageview"
-        app:srcCompat="@drawable/one"/>
+        app:srcCompat="@drawable/one"
+        android:contentDescription="@string/shows_the_left_die" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
